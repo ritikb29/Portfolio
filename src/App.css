@@ -1,38 +1,610 @@
-.App {
-  text-align: center;
+.blackbackground {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px; /* Add padding for small screens */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Heading-box {
+  width: 80%; /* Default width for smaller screens */
+  max-width: 600px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the container */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.Heading {
+  font-family: Bungee, cursive;
+  font-size: 28px; /* Default font size for smaller screens */
+  font-weight: 900;
+  line-height: 2.5rem;
+  color: #dfe7f3;
+  text-align: center; /* Center text for better readability */
+}
+
+.Heading span {
+  color: #f1c40f;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .Heading-box {
+    width: 60%;
+  }
+
+  .Heading {
+    font-size: 33px; /* Adjust font size for tablets */
+    line-height: 2.8rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (min-width: 1024px) {
+  .Heading-box {
+    width: 40%; /* Increase width for larger screens */
+  }
+
+  .Heading {
+    font-size: 36px; /* Adjust font size for desktops */
+    line-height: 3rem;
+  }
+}
+.navbar{
+  width: 100vm;
+  background-color: #030b25;
+  border-bottom: 3px solid black;
+}
+.nav-link{
+  color: #dfe7f3;
+  font-family: Montserrat Alternates, sans-serif;
+  font-size: 100;
+  font-weight: 100;
+}
+.navbar-nav .nav-link:hover {
+  color: #f1c40f; /* Change color on hover */
+  text-decoration: underline; /* Optional: add underline on hover */
+}
+.about-Container{
+  height: auto;
+  width: 100%;
+  background-color: #030b25;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  padding-top: 10px;
+}
+.line{
+  width: 70px;
+  height: 2px;
+  background-color: white;
+  /* margin: 10px; */
+}
+.paragraph-box{
+  width: 50%;
+}
+.paragraph-box p{
+  color: #dfe7f3;
+  line-height: 1.9rem;
+  font-size: 17px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 1000px) {
+  .paragraph-box {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .paragraph-box {
+    width: 90%;
+  }
+  .paragraph-box p{
+    font-size: 13px;
+    line-height: 1.2rem;
+  }
+}
+.paragraph-box p span a{
+  color: #22abfa;
+  font-weight: bold;
+  text-decoration: none;
+}
+.paragraph-box p span a:hover{
+  text-decoration: underline;
+}
+.about-buttons{
+  height: 50px;
+  width: 250px;
+}
+.hexagon {
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Keep the height the same to maintain a perfect hexagon */
+  background-color: #22abfa;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(
+    50% 0%, 
+    100% 25%, 
+    100% 75%, 
+    50% 100%, 
+    0% 75%, 
+    0% 25%
+  ); /* Hexagon shape */
+  transition: transform 0.3s ease, background-color 0.3s ease, fill 0.3s ease; /* Smooth transition */
+}
+
+.hexagon:hover {
+  background-color: #030b25; /* Changes the background color on hover */
+  transform: scale(1.1); /* Zoom in effect */
+}
+
+.hexagon:hover svg path {
+  fill: #ffffff; /* Changes the color of the SVG to white on hover */
+}
+
+.hexagon svg {
+  width: 80%; /* Adjust as necessary */
+  height: 80%; /* Adjust as necessary */
+  transition: transform 0.3s ease, fill 0.3s ease; /* Smooth transition for the SVG */
+}
+
+.hexagon:hover svg {
+  transform: scale(1.1); /* Zoom in SVG along with hexagon */
+}
+
+
+
+
+
+.hexagon svg {
+  width: 60%;
+  height: 60%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+  display: inline;
+}
+.image-container{
+  width: 88%;
+  height: 200px;
+  /* border: 2px red solid; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 12%;
+  padding-right:8%;
+  gap: 15px;
+}
+.about-img-inside-hexagon{
+  height: 60%;
+  width: 60%;
+  color: #030b25;
+}
+.btn-container{
+  /* border: 2px solid white; */
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width:1100px) {
+  .about-buttons{
+    height: 50px;
+    width: 200px;
+  }
+  .hexagon {
+    width: 80px; /* Adjust width as needed */
+    height: 80px;
+  }
+}
+@media screen and (max-width:850px) {
+  .about-buttons{
+    height: 50px;
+    width: 100px;
+    font-size: 15px;
+  }
+  .hexagon {
+    width: 60px; /* Adjust width as needed */
+    height: 60px;
+  }
+  
+}
+@media screen and (max-width:450px) {
+  .about-buttons{
+    height: 40px;
+    width: 80px;
+    font-size: 10px;
+  }
+  .hexagon {
+    width: 50px; /* Adjust width as needed */
+    height: 50px;
+  }
+}
+.myservice-container{
+  height: auto;
+  width: 100%;
+  background-color: #030b25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 25px;
+  /* border: 2px solid white; */
+}
+.box-of-boxes{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* border: 2px solid white; */
+}
+.service-box{
+  width: 320px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #020716;
   color: white;
+  
+  border-radius: 10px;
+}
+.box-image{
+  height: 30%;
+  width: 30%;
+}
+.box-paragraph{
+  display: none;
+  margin: 10px;
+  
+}
+.service-box:hover .box-image{
+  display: none;
+}
+.service-box:hover .head{
+  display: none;
+}
+.service-box:hover .box-paragraph{
+  display: block;
+}
+.mywork-boxes{
+  width: 300px;
+  height: 300px;
+  border: solid black 1px;
+  justify-content: center;
+  align-items: center;
+}
+.mywork-container{
+  height: auto;
+  width: 100%;
+  background-color: #030b25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 25px;
+  flex-wrap: wrap;
+  /* border: 2px solid white; */
+}
+.my-work{
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+.image-container-work{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+.image-work{
+  height: 80%;
+  width: 80%;
+  /* display: none; */
+}
+.box-image-para{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  display: none;
+  background-color: #030b25;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.image-box-btn{
+  background-color: #22abfa;
+  /* height: 35px; */
+  width: 120px;
+  border: none;
+  border-radius: 5px;
+}
+.aqua{
+  color: rgb(0, 51, 255);
+}
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+.mywork-boxes:hover .box-image-para {
+  display: flex; /* Show content on hover */
 }
 
-.App-link {
-  color: #61dafb;
+.mywork-boxes:hover .image-work {
+  display: none; /* Hide image on hover */
+}
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Start slightly above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to the original position */
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.project-name {
+  font-weight: 800;
+  font-size: 22px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-20px); /* Start slightly higher */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.mywork-boxes:hover .project-name {
+  opacity: 1; /* Make the text visible on hover */
+  transform: translateY(0); /* Move it to its final position */
+  animation: fadeDown 0.5s ease-in-out forwards; /* Apply the fade-down animation */
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to the original position */
   }
+}
+
+.image-box-btn {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start slightly lower */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.mywork-boxes:hover .image-box-btn {
+  opacity: 1; /* Make the button visible on hover */
+  transform: translateY(0); /* Move it to its final position */
+  animation: fadeUp 0.5s ease-in-out forwards; /* Apply the fade-up animation */
+}
+.image-box-btn {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start slightly lower */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  background-color: #22abfa; /* Default background color */
+  border: none;
+  border-radius: 5px;
+}
+.mywork-boxes:hover .image-box-btn {
+  opacity: 1; /* Make the button visible on hover */
+  transform: translateY(0); /* Move it to its final position */
+  animation: fadeUp 0.5s ease-in-out forwards; /* Apply the fade-up animation */
+}
+.image-box-btn:hover {
+  background-color: transparent; /* Make background transparent on hover */
+  box-shadow: 0px 0px 10px 2px white; /* Add white shadow on hover */
+  color: white; /* Ensure text is visible against the transparent background */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+.view-source-btn-container{
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.testimonials-box-container {
+  display: flex;
+  height: auto;
+  width: 80%;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+}
+
+.testimonials-boxes {
+  width: 100%; /* Full width on small screens */
+  max-width: 300px; /* Limit the width on larger screens */
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #020716;
+  color: white;
+  border-radius: 50%;
+  padding: 25px;
+  margin-bottom: 20px; /* Add spacing between boxes */
+}
+
+.contact {
+  background: rgb(197,220,223);
+  background: linear-gradient(90deg, rgba(197,220,223,1) 0%, rgba(48,127,241,1) 23%, rgba(34,67,115,1) 55%, rgba(40,90,163,1) 73%);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px; /* Add padding to ensure spacing on smaller screens */
+}
+
+.contant-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-form {
+  background-color: rgba(2, 7, 22, 0.2);
+  height: auto;
+  width: 100%; /* Full width on small screens */
+  max-width: 500px; /* Limit the width on larger screens */
+  border-radius: 20px;
+  padding: 20px; /* Add padding for spacing */
+  border: white 1px solid;
+}
+
+.contact-img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Maintain aspect ratio */
+  border-radius: 30px;
+}
+
+.contact-color {
+  color: #020716;
+  font-size: large;
+  font-weight: 800;
+  text-align: center; /* Center text on small screens */
+}
+
+.submit {
+  float: right;
+  width: 100%; /* Full width on small screens */
+  max-width: 150px; /* Limit the width on larger screens */
+  color: #020716;
+  text-align: center; /* Center button on small screens */
+}
+
+form input {
+  background: none;
+  border: #020716 1px solid;
+  border-radius: 7px;
+  color: #020716;
+  width: 100%; /* Full width on small screens */
+  max-width: 300px; /* Limit the width on larger screens */
+  padding-left: 10px;
+  margin-bottom: 10px; /* Add margin for spacing */
+}
+
+form textarea {
+  background: none;
+  border: #020716 1px solid;
+  border-radius: 2px;
+  color: #020716;
+  width: 100%; /* Full width on small screens */
+  max-width: 300px; /* Limit the width on larger screens */
+  margin-bottom: 10px; /* Add margin for spacing */
+}
+
+form label {
+  font-weight: 700;
+}
+
+form ::placeholder {
+  color: #020716;
+  font-size: 12px;
+}
+@media screen and (max-width: 950px) {
+  .contant-container{
+    flex-direction: column;
+  }
+}
+/* Responsive design for small screens */
+@media screen and (max-width: 768px) {
+  .testimonials-box-container {
+    flex-direction: column; /* Stack testimonials vertically */
+    align-items: center;
+  }
+
+  .contant-container {
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .submit {
+    float: none;
+    width: 100%; /* Full width on small screens */
+  }
+}
+.footer{
+  background-color: #26517d;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.name-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.name-container .name {
+  position: relative;
+  padding: 0 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #020716;
+}
+
+.name-container .name::before,
+.name-container .name::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 8px; /* Total height for the double line */
+  background: none;
+  border-top: 2px solid white; /* Top line */
+  border-bottom: 2px solid white; /* Bottom line */
+}
+
+.name-container .name::before {
+  left: -90%;
+}
+
+.name-container .name::after {
+  right: -90%;
+}
+.footer-logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 50px;
+  width: 50%;
+  
+}
+.footer-logo-container img{
+  height: 40px;
+  width: 40px;
 }
