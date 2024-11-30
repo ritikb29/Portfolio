@@ -14,7 +14,7 @@ export default function Firstcontener({ scrollToMyWork }) {
             <p className="h5 text-white text-center">I am a full stack web developer</p>
           </div>
           <button className="btn btn-primary my-3" onClick={scrollToMyWork}>
-            <strong>Check Out My Resume</strong> <FontAwesomeIcon icon="fas fa-less-than" />
+            <strong>Check Out My works</strong> <FontAwesomeIcon icon="fas fa-less-than" />
           </button>
         </div>
       </div>
