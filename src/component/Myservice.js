@@ -6,7 +6,7 @@ import fullstack from './image/fullstack-36c09759.gif'
 
 export default function Myservice() {
   return (
-    <>
+    <main>
     <div className='myservice-container'>
     <h1 className='text-white text-center mt-5'>My service</h1>
     <div className='line text-center'></div>
@@ -28,6 +28,6 @@ export default function Myservice() {
             </div>
         </div>
     </div>
-    </>
+    </main>
   )
 }

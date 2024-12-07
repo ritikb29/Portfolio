@@ -3,7 +3,8 @@ var FontAwesomeIcon = require('react-fontawesome');
 
 export default function Firstcontener({ scrollToMyWork }) {
   return (
-    <>
+    
+    <header>
       <div>
         <div className="blackbackground">
           <div className="container Heading-box">
@@ -18,6 +19,7 @@ export default function Firstcontener({ scrollToMyWork }) {
           </button>
         </div>
       </div>
-    </>
+      </header>
+   
   );
 }

@@ -93,7 +93,7 @@ export default function Mywork() {
   ];
 
   return (
-    <>
+    <article>
       <div className='mywork-container'>
         <h1 className='text-white mt-5'>My Recent Work</h1>
         <div className="line mb-5"></div>
@@ -144,6 +144,6 @@ export default function Mywork() {
           ))}
         </div>
       </div>
-    </>
+    </article>
   );
 }

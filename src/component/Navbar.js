@@ -14,6 +14,7 @@ export default function Navbar({ scrollToAbout, scrollToMyService, scrollToMyWor
   };
 
   return (
+    <Navbar>
     <nav className="navbar navbar-expand-lg navbar2 px-3 sticky-top">
       <a className="navbar-brand text-white" href="/"><strong>Ritik</strong></a>
       <button
@@ -58,5 +59,6 @@ export default function Navbar({ scrollToAbout, scrollToMyService, scrollToMyWor
         </ul>
       </div>
     </nav>
+    </Navbar>
   );
 }

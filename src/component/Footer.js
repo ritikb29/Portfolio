@@ -6,7 +6,7 @@ import instagram from './image/instagram logo.png'
 
 export default function Footer() {
   return (
-    <>
+    <footer>
         <div className='footer'>
         <div class="name-container">
   <span class="name text-white">Ritik Bhat</span>
@@ -29,6 +29,6 @@ export default function Footer() {
 <p className='text-light mt-3'>copyright by @ritikbhat29 </p>
 
         </div>
-    </>
+    </footer>
   )
 }
